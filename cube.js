@@ -255,6 +255,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 	function megold(){
 		//document.getElementById("megoldas").innerHTML = legjobb;
 		setInterval(vegsomegold, 2000);
+		//vegsomegold();
 	}
 	
 	var balgomb=new Event('keydown');
@@ -1030,7 +1031,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(jobbgomb); },600);
 				setTimeout(function(){ document.dispatchEvent(legomb); },800);
 				}
-				else if(felso==false && ((kockauj_oszlop!=0 && kockauj_sor!=3) || (kockauj_oszlop!=0 && kockauj_sor!=0))){
+				else if(felso==false && ((kockauj_oszlop!=0 && kockauj_oszlop!=1 && kockauj_sor!=3) || (kockauj_oszlop!=0 && kockauj_sor!=0))){
 				document.dispatchEvent(balgomb);
 				setTimeout(function(){ document.dispatchEvent(balgomb); },200);
 				setTimeout(function(){ document.dispatchEvent(legomb); },400);
@@ -1141,12 +1142,12 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(felgomb); },600);
 				setTimeout(function(){ document.dispatchEvent(balgomb); },800);
 				}
-				else if(also==false && ((kockauj_oszlop!=0 && kockauj_sor!=0) || (kockauj_oszlop!=3 && kockauj_sor!=0))){
-				document.dispatchEvent(jobbgomb);
+				else if(also==false && ((kockauj_oszlop!=0 && kockauj_sor!=0) || (kockauj_oszlop!=3 && kockauj_sor!=0) || (kockauj_oszlop!=0 && kockauj_sor!=3))){
+				document.dispatchEvent(balgomb);
 				setTimeout(function(){ document.dispatchEvent(felgomb); },200);
-				setTimeout(function(){ document.dispatchEvent(balgomb); },400);
+				setTimeout(function(){ document.dispatchEvent(jobbgomb); },400);
 				setTimeout(function(){ document.dispatchEvent(legomb); },600);
-				setTimeout(function(){ document.dispatchEvent(balgomb); },800);
+				setTimeout(function(){ document.dispatchEvent(jobbgomb); },800);
 				}
 				else if(bal==false && ((kockauj_oszlop!=3 && kockauj_sor!=0) || (kockauj_oszlop!=0 && kockauj_sor!=0))){
 				document.dispatchEvent(felgomb);
@@ -1207,7 +1208,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(felgomb); },600);
 				setTimeout(function(){ document.dispatchEvent(jobbgomb); },800);
 				}
-				else if(jobb==false && ((kockauj_oszlop!=0 && kockauj_sor!=3) || (kockauj_oszlop!=3 && kockauj_sor!=3))){
+				else if(jobb==false && ((kockauj_oszlop!=0 && (kockauj_sor!=3 || kockauj_sor!=2)) || (kockauj_oszlop!=3 && kockauj_sor!=3))){
 				document.dispatchEvent(legomb);
 				setTimeout(function(){ document.dispatchEvent(legomb); },200);
 				setTimeout(function(){ document.dispatchEvent(balgomb); },400);
@@ -1607,7 +1608,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(felgomb); },600);
 				setTimeout(function(){ document.dispatchEvent(balgomb); },800);
 				}
-				else;
+				else h_tavolsag[poz]=6.3;;
 			}
 			if(kockauj_sor==billentyu_kiir_sor[poz]+2 && kockauj_oszlop==billentyu_kiir_oszlop[poz]+3){
 				if(bal==false){
@@ -1669,7 +1670,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(legomb); },600);
 				setTimeout(function(){ document.dispatchEvent(balgomb); },800);
 				}
-				else;
+				else h_tavolsag[poz]=6.3;;
 			}	
 			else if(kockauj_sor==billentyu_kiir_sor[poz]-2 && kockauj_oszlop==billentyu_kiir_oszlop[poz]+3){
 				if(jobb==false){
@@ -1700,7 +1701,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(balgomb); },600);
 				setTimeout(function(){ document.dispatchEvent(legomb); },800);
 				}
-				else;
+				else h_tavolsag[poz]=6.3;;
 			}				
 			else if(kockauj_sor==billentyu_kiir_sor[poz]-2 && kockauj_oszlop==billentyu_kiir_oszlop[poz]-3){
 				if(bal==false){
@@ -1731,7 +1732,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(jobbgomb); },600);
 				setTimeout(function(){ document.dispatchEvent(legomb); },800);
 				}
-				else;
+				else h_tavolsag[poz]=6.3;;
 			}
 			else if(kockauj_sor==billentyu_kiir_sor[poz]-3 && kockauj_oszlop==billentyu_kiir_oszlop[poz]-2){
 				if(also==false){
@@ -1762,7 +1763,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(legomb); },600);
 				setTimeout(function(){ document.dispatchEvent(jobbgomb); },800);
 				}
-				else;
+				else h_tavolsag[poz]=6.3;;
 			}
 			else if(kockauj_sor==billentyu_kiir_sor[poz]+2 && kockauj_oszlop==billentyu_kiir_oszlop[poz]-3){
 				if(bal==false){
@@ -1793,7 +1794,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(jobbgomb); },600);
 				setTimeout(function(){ document.dispatchEvent(felgomb); },800);
 				}
-				else;
+				else h_tavolsag[poz]=6.3;;
 			}
 			else if(kockauj_sor==billentyu_kiir_sor[poz]+3 && kockauj_oszlop==billentyu_kiir_oszlop[poz]-2){
 				if(felso==false){
@@ -2318,7 +2319,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				}
 				else;
 			}
-			else if(kockauj_oszlop==billentyu_kiir_oszlop[poz]-2 && kockauj_sor==billentyu_kiir_sor[poz]+2){
+			else if(kockauj_oszlop==billentyu_kiir_oszlop[poz]-2 && kockauj_sor==billentyu_kiir_sor[poz]-2){
 				if(jobb==false){
 				document.dispatchEvent(legomb);
 				setTimeout(function(){ document.dispatchEvent(legomb); },200);
@@ -2335,17 +2336,8 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(legomb); },800);
 				setTimeout(function(){ document.dispatchEvent(legomb); },1000);
 				}
-				else if(felso==false){
-				document.dispatchEvent(felgomb);
-				setTimeout(function(){ document.dispatchEvent(jobbgomb); },200);
-				setTimeout(function(){ document.dispatchEvent(legomb); },400);
-				setTimeout(function(){ document.dispatchEvent(jobbgomb); },600);
-				setTimeout(function(){ document.dispatchEvent(felgomb); },800);
-				setTimeout(function(){ document.dispatchEvent(felgomb); },1000);
-				}
-				else;
 			}
-			else if(kockauj_oszlop==billentyu_kiir_oszlop[poz]-2 && kockauj_sor==billentyu_kiir_sor[poz]-2){
+			else if(kockauj_oszlop==billentyu_kiir_oszlop[poz]-2 && kockauj_sor==billentyu_kiir_sor[poz]+2){
 				if(jobb==false){
 				document.dispatchEvent(felgomb);
 				setTimeout(function(){ document.dispatchEvent(felgomb); },200);
@@ -2512,7 +2504,7 @@ draw(10+((szinesszam[kocka]%4)*60)+35,10+(Math.floor(szinesszam[kocka]/4)*60)+65
 				setTimeout(function(){ document.dispatchEvent(jobbgomb); },800);
 				setTimeout(function(){ document.dispatchEvent(jobbgomb); },1000);
 				}
-				else;
+				else h_tavolsag[poz]=7.2;;
 			}
 			else {
 				legjobb=legjobb-6;
